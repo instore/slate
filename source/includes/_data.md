@@ -31,7 +31,6 @@ Optional. Identifier for an Instore discount.  Enables better reporting.
     "modifierId": UUIDv4
     "name": STRING,
     "quantity": INTEGER,
-    "sort": INTEGER,
     "unitPrice": CURRENCY_STRING,
 }
 ```
@@ -50,10 +49,6 @@ Required.  Appears on receipt.  e.g. "Well done" or "Bacon"
 
 Optional.  Defaults to 1.  Appears on receipt when not 1.  e.g. "2&#215; bacon".
 
-### sort
-
-Required.  AppliedModifiers will be sorted by this (ascending) in all displays including the receipt.
-
 ### unitPrice
 
 Required.  How much is charged when this modifier is added to an order line (bacon costs a dollar).  The order line's price should have been raised by (unitPrice &#215; quantity) before any discounts or taxes are applied.
@@ -65,7 +60,6 @@ Required.  How much is charged when this modifier is added to an order line (bac
     "name": STRING,
     "amount": CURRENCY_STRING,
     "taxId": UUIDv4,
-    "sort": INTEGER
 }
 ```
 
@@ -76,10 +70,6 @@ Required.  Customer facing.  e.g. "Sales Tax"
 ### amount
 
 Required.  Total amount of tax (to be) collected.
-
-### sort
-
-Required.  Taxes will be sorted by this (ascending) in all displays including the receipt.
 
 ### taxId
 
@@ -140,6 +130,10 @@ Optional.  Instore will strip all non numeral characters.
 
 Optional.  Will be printed on the receipt.  Any order identifier that was sent to the customer as part of the checkout process.  Useful in customer service situations as it allows the customer to identify the order over the phone.
 
+### discounts
+
+See AppliedDiscounts.  Discounts that affect the whole order e.g. "10% off Tuesdays".  Discounts on receipts etc. will appear in the same sort order as in this array.
+
 ### notes
 
 Optional.  Is printed on receipt.  Any kind of high level notes e.g. "please knock on door around the side"
@@ -152,6 +146,10 @@ Required.  One of [ 'forHere', 'delivery', 'takeout' ]
 
 Required.  Date and time conforming to ISO 8601.  Used to determine age of order and to look order up by date in reporting.
 
+### orderLines
+
+See OrderLine.  OrderLines on receipts etc. will appear in the same sort order as in this array.
+
 ### orderSource
 
 Optional.  e.g. "Grubhub", helpful for customer service, understanding payment settlement, etc.
@@ -159,6 +157,14 @@ Optional.  e.g. "Grubhub", helpful for customer service, understanding payment s
 ### orderTotal
 
 Required.  Total owed by customer after nearly everything is considered including taxes, discounts, etc.  Basically: "the amount the customer owes for the order."  Does not include tips.
+
+### payments
+
+See Payment.  Payments on receipts etc. will appear in the same sort order as in this array.
+
+### taxes
+
+See AppliedTax.  AppliedTaxes on receipts etc. will appear in the same sort order as in this array.
 
 ### uniqueId
 
@@ -168,24 +174,19 @@ Optional.  Similar to customerFacingOrderNumber, but not customer facing.  A goo
 
 ```shell
 {
-    "unitPrice": CURRENCY_STRING,
     "itemId": UUIDv4,
     "itemName": STRING,
     "itemSizeId": UUIDv4,
     "itemSizeName": STRING,
     "note": STRING,
     "quantity": INTEGER,
-    "sort": INTEGER,
+    "unitPrice": CURRENCY_STRING,
 
     "discounts": [ See 'AppliedDiscount' ],
     "modifiers": [ See 'AppliedModifier' ],
     "taxes": [ See 'AppliedTax' ]
 }
 ```
-
-### unitPrice
-
-Required.  How much is charged for one unmodified unit of this menu item (one hamburger) before tax.  The order line's total price should have been (unitPrice &#215; quantity) before any discounts, taxes, or modifiers are applied.
 
 ### itemId
 
@@ -211,9 +212,21 @@ Optional.  Prints next to this particular order line on receipts and kitchen tic
 
 Required.  
 
-### sort
+### unitPrice
 
-Required.  Order lines will be sorted by this (ascending) in all displays including the receipt.
+Required.  How much is charged for one unmodified unit of this menu item (one hamburger) before tax.  The order line's total price should have been (unitPrice &#215; quantity) before any discounts, taxes, or modifiers are applied.
+
+### discounts
+
+See AppliedDiscounts.  Discounts that affect just one order line e.g. "Second burger is %50 off".  Discounts on receipts etc. will appear in the same sort order as in this array.
+
+### modifiers
+
+See AppliedModifier.  AppliedModifiers on receipts etc. will appear in the same sort order as in this array.
+
+### taxes
+
+See AppliedTax.  These OrderLine level taxes are good for special taxes that only apply to certain things e.g. alcohol.  AppliedTaxes on receipts etc. will appear in the same sort order as in this array.
 
 ## Payment
 

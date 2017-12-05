@@ -11,12 +11,10 @@
         "unitPrice": "$10.00",
         "itemName": "Cheeseburger",
         "quantity": 1,
-        "sort": 0,
     }],
     "taxes": [{
         "amount": "$0.50"
         "name": "%5 Sales Tax"
-        "sort": 0
     }]
 }
 ```
@@ -60,28 +58,24 @@ A very basic order designed to show how simple things can be.  This is an unpaid
       "itemSizeName": "Extra Huge",
       "note": "Ketchup on the side",
       "quantity": 2,
-      "sort": 0,
       "unitPrice": "$1.00",
       "discounts": [ ],
       "modifiers": [{
           "modifierId": "d16de64b-011a-45a7-929c-07717657ece4"
           "name": "Lettuce",
           "quantity": 1,
-          "sort": 0,
           "unitPrice": "$0.00",
       },
       {
           "modifierId": "1d256f5f-54a0-4ddc-9969-3328dfb05527"
           "name": "Tomato",
           "quantity": 1,
-          "sort": 1,
           "unitPrice": "$0.00",
       },
       {
           "modifierId": "3ccd8a77-ae68-4105-b573-fbee3fbad11d"
           "name": "Bacon",
           "quantity": 1,
-          "sort": 2,
           "unitPrice": "$1.00",
       }],
   },
@@ -93,7 +87,6 @@ A very basic order designed to show how simple things can be.  This is an unpaid
       "itemSizeName": "Really big",
       "note": "Don't skimp on the salt!",
       "quantity": 1,
-      "sort": 1,
       "discounts": [{
           "totalDiscount": "$5.00"
           "name": "Free fries!"
@@ -102,7 +95,6 @@ A very basic order designed to show how simple things can be.  This is an unpaid
       "modifiers": [{
           "modifierId": "4d3974c0-e05d-4fb6-a947-83ea92f7f518",
           "name": "Wedges",
-          "sort": 0,
           "unitPrice": "$0.00",
       }],
   }],
@@ -127,7 +119,6 @@ A very basic order designed to show how simple things can be.  This is an unpaid
       "name": "%5 Sales Tax",
       "amount": "$0.18",
       "taxId": "85821765-be37-4771-a92d-a0bbf55fedbd",
-      "sort": 0
   }]
 }
 ```
