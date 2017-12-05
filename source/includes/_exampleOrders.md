@@ -114,16 +114,14 @@ A very basic order designed to show how simple things can be.  This is an unpaid
           "amount": "$1.00",
       },
       "totalAmount": "$6.00",
-      "transactionData": { "someTransactionNumber" : 1234,
-                           "someBatchNumber" : 4321 }
+      "transactionData": "{ \"someTransactionNumber\" : 1234, \"someBatchNumber\" : 4321 }"
   },
   {
       "cardHolderFirstName": "Roberta",
       "cardHolderLastName": "Bobberson",
       "cardMaskedPan": "4000********4321",
       "totalAmount": "$5.00",
-      "transactionData": { "someTransactionNumber" : 2345,
-                           "someBatchNumber" : 5432 }
+      "transactionData": "{ \"someTransactionNumber\" : 2345, \"someBatchNumber\" : 5432 }"
   }],
   "taxes": [{
       "name": "%5 Sales Tax",
