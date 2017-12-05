@@ -121,7 +121,7 @@ A very basic order designed to show how simple things can be.  This is an unpaid
       "cardHolderLastName": "Bobberson",
       "cardMaskedPan": "4000********4321",
       "totalAmount": "$5.00",
-      "transactionData": "{ \"someTransactionNumber\" : 2345, \"someBatchNumber\" : 5432 }"
+      "transactionData": "234567"
   }],
   "taxes": [{
       "name": "%5 Sales Tax",

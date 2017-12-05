@@ -56,7 +56,7 @@ Required.  AppliedModifiers will be sorted by this (ascending) in all displays i
 
 ### unitPrice
 
-Required.  How much is charged for an unmodified one of these things.  The order line's price should have been raised by (unitPrice &#215; quantity) before any discounts or taxes are applied.
+Required.  How much is charged when this modifier is added to an order line (bacon costs a dollar).  The order line's price should have been raised by (unitPrice &#215; quantity) before any discounts or taxes are applied.
 
 ## AppliedTax
 
@@ -185,7 +185,7 @@ Optional.  Similar to customerFacingOrderNumber, but not customer facing.  A goo
 
 ### unitPrice
 
-Required.  How much is charged for a single unmodified one of these things before tax.  The order line's total price should have been (unitPrice &#215; quantity) before any discounts, taxes, or modifiers are applied.
+Required.  How much is charged for one unmodified unit of this menu item (one hamburger) before tax.  The order line's total price should have been (unitPrice &#215; quantity) before any discounts, taxes, or modifiers are applied.
 
 ### itemId
 
