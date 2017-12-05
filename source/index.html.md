@@ -36,14 +36,14 @@ To avoid this problem the Instore API uses strings to pass any currency related 
 curl -X POST \
 -H "api-key: your_key_here" \
 -d @order.json
-https://api-v2-staging.instoredoes.com/order
+https://some.instore.server.com/incomingOrder
 ```
 
 Used to provide a new order to Instore.  Can not be used to edit, only to create.
 
 ### HTTP Request
 
-`POST https://api-v2-staging.instoredoes.com/order`
+`POST https://some.instore.server.com/incomingOrder`
 
 ### POST body
 
