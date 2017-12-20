@@ -25,15 +25,16 @@ Instore partner API docs.  v1.0.0
 
 # A note on numbers and currency
 
-In most programming languages doing math with floating point numbers (floats, doubles, reals, etc) introduces small amounts of error over time.  To avoid this problem the Instore API uses strings to pass any currency related numbers.  In the data specs you will see this referred to as a CURRENCY_STRING.
+In most programming languages doing math with floating point numbers (floats, doubles, reals, etc) introduces small amounts of error over time.  To avoid this problem the Instore API uses strings to pass any currency related numbers.  In the data specs you will see this referred to as a CURRENCY_STRING or a FLOAT_STRING.
 
 Currently the Instore API only accepts amounts in US dollars.
 
 Correct CURRENCY_STRING | Do not use
 ------------------------|----------
-Numerals | a currency symbol e.g. "$"
-An optional decimal point | More than two digits after the decimal point.
+Numerals | More than two digits after the decimal point.
+An optional decimal point |
 Optional commas used as thousands separators |
+Currency symbols such as $ are optional |
 
 Correct examples:
 

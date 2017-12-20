@@ -28,7 +28,7 @@ Optional. Identifier for an Instore discount.  Enables better reporting.
 
 ```shell
 {
-    "modifierId": UUIDv4
+    "modifierId": UUIDv4,
     "name": STRING,
     "quantity": INTEGER,
     "unitPrice": CURRENCY_STRING,
@@ -96,6 +96,7 @@ Optional.  Identifier for an Instore tax.  Enables more detailed reporting.
     }
 
     "customerFacingOrderNumber": STRING,
+    "locationId": UUIDv4,
     "notes": STRING,
     "orderType": STRING,
     "orderDate": DATETIME,
@@ -112,7 +113,9 @@ Optional.  Identifier for an Instore tax.  Enables more detailed reporting.
 
 ### address
 
-Required for delivery orders, otherwise optional.  The address to which the order will be delivered.  US ZIP codes are placed in the postalCode field.
+Required for delivery orders, otherwise optional.  The address to which the order will be delivered.  If the address is included all child keys are optional.
+
+US ZIP codes are placed in the postalCode field.
 
 ### customer
 
@@ -129,6 +132,10 @@ Optional.  Instore will strip all non numeral characters.
 ### customerFacingOrderNumber
 
 Optional.  Will be printed on the receipt.  Any order identifier that was sent to the customer as part of the checkout process.  Useful in customer service situations as it allows the customer to identify the order over the phone.
+
+### locationId
+
+Required.  An Instore locationId identifying the location that the order is intended for.
 
 ### discounts
 
@@ -179,7 +186,7 @@ Optional.  Similar to customerFacingOrderNumber, but not customer facing.  A goo
     "itemSizeId": UUIDv4,
     "itemSizeName": STRING,
     "note": STRING,
-    "quantity": INTEGER,
+    "quantity": FLOAT_STRING,
     "unitPrice": CURRENCY_STRING,
 
     "discounts": [ See 'AppliedDiscount' ],

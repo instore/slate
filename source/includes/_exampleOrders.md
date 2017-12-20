@@ -4,18 +4,19 @@
 
 ```shell
 {
-    "orderType": "takeout",
-    "orderDate": "2017-01-01T18:00:00Z",
-    "orderTotal": "$10.50",
-    "orderLines": [{
-        "unitPrice": "$10.00",
-        "itemName": "Cheeseburger",
-        "quantity": 1,
-    }],
-    "taxes": [{
-        "amount": "$0.50"
-        "name": "%5 Sales Tax"
-    }]
+  "locationId": "7a77834e-6bd6-4e64-a932-2ada8f2f1916",
+  "orderType": "takeout",
+  "orderDate": "2017-01-01T18:00:00Z",
+  "orderTotal": "$10.50",
+  "orderLines": [{
+    "unitPrice": "$10.00",
+    "itemName": "Cheeseburger",
+    "quantity": 1,
+  }],
+  "taxes": [{
+    "amount": "$0.50"
+    "name": "%5 Sales Tax"
+  }]
 }
 ```
 
@@ -40,6 +41,7 @@ A very basic order designed to show how simple things can be.  This is an unpaid
       "phone": "555.555.5555"
   }
   "customerFacingOrderNumber": "Order 123-abc-Q",
+  "locationId": "7a77834e-6bd6-4e64-a932-2ada8f2f1916",
   "notes": "Onion allergy, please no onions.",
   "orderType": "delivery",
   "orderDate": "2017-01-01T18:00:00Z",
