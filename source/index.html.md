@@ -21,7 +21,7 @@ search: true
 
 # Introduction
 
-Instore partner API docs.  v1.0.0
+Instore partner API docs.  v1.0.1
 
 # A note on numbers and currency
 
