@@ -49,7 +49,7 @@ A very basic order designed to show how simple things can be.  This is an unpaid
   "orderTotal": "$3.78",
   "uniqueId": "d0cbd097-e82c-4614-81a1-dd6c37b5003e",
   "discounts": [{
-      "totalDiscount": "-$0.40",
+      "totalDiscount": "$0.40",
       "name": "%10 percent off Tuesdays",
       "discountId": "8245056d-9a14-4baf-b4c7-20ceab82096a"
   }],
