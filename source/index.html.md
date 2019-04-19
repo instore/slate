@@ -21,7 +21,7 @@ search: true
 
 # Introduction
 
-Instore partner API docs.  v1.0.1
+Instore partner API docs.  v1.0.2
 
 # A note on numbers and currency
 
@@ -49,16 +49,17 @@ Correct examples:
 
 ```shell
 curl -X POST \
--H "api-key: your_key_here" \
--d @order.json
-https://some.instore.server.com/incomingOrder
+-H "api-key: [- your_key_here -]" \
+-H "Content-Type: application/json" \
+-d @order.json \
+https://some.instore.server.com/incomingOrders
 ```
 
 Used to provide a new order to Instore.  Can not be used to edit, only to create.
 
 ### HTTP Request
 
-`POST https://some.instore.server.com/incomingOrder`
+`POST https://some.instore.server.com/incomingOrders`
 
 ### POST body
 
