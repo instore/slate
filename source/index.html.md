@@ -43,7 +43,7 @@ Correct examples:
 * "1234.56"
 * "0.89"
 
-# Orders
+# Orders endpoints
 
 ## Create/submit an order
 
@@ -64,3 +64,54 @@ Used to provide a new order to Instore.  Can not be used to edit, only to create
 ### POST body
 
 See "Data Format -> Order"
+
+## Check order status
+
+```shell
+curl -X GET \
+-H "api-key: [- your_key_here -]" \
+-H "Content-Type: application/json" \
+https://some.instore.server.com/incomingOrders/summary/:locationId?date=YYYY-MM-DD
+```
+
+```shell
+Example output
+[
+    {
+        "customerFacingOrderNumber": null,
+        "hasReachedIPad": true,
+        "instoreId": "cb96ad8e-37dc-4fe8-8774-9fdcebba3d95",
+        "instoreReceivedAt": "2017-01-01T19:58:20.025Z",
+        "orderDate": "2017-01-01T18:00:00Z",
+        "orderSource": null,
+        "orderTotal": "$10.50",
+        "uniqueId": null
+    }
+]
+```
+
+Will return a list of all of the orders submitted via the incomingOrders endpoint to a given location on a given day.  The day will be in the location's local time zone.
+
+The "date" argument is optional and refers to the "instoreReceivedAt" field.  It defaults to "today".
+
+### Example URL
+
+`https://some.instore.server.com/incomingOrders/summary/48b63b2b-ca18-4634-8516-f464d008e646?date=2017-01-01`
+
+### instoreId
+
+A unique ID number assigned to all incoming orders by Instore.
+
+### instoreReceivedAt
+
+The date/time at which Instore received the order.  Typically the moment a POST call to /incomingOrders was processed.
+
+### hasReachedIPad
+
+This is true once the order has been delivered to the merchant's iPad.  Typically this means the order will have printed from a receipt printer.  If this value is false Instore is actively attempting to deliver the order to the iPad, which may be sleeping or out of Wi-Fi range etc.
+
+Note that the order will not appear in Instore Office until this is true.
+
+### customerFacingOrderNumber, orderDate, orderSource, orderTotal, uniqueId
+
+Values taken from the submitted order itself.
