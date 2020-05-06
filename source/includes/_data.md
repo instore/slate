@@ -151,7 +151,14 @@ Required.  One of [ 'forHere', 'delivery', 'takeout' ]
 
 ### orderDate
 
-Required.  Date and time conforming to ISO 8601.  Used to determine age of order and to look order up by date in reporting.
+Required.  Date and time conforming to ISO 8601.  Used to determine age of order and to look up the order by date in reporting.  Note that Instore's date parser (Apple's NSDateFormatter) is rather picky.  It is best to exactly conform to the example formats below.
+
+In most cases Instore presents dates to merchants in the local time zone of the business.  Dates submitted in a different time zone will be converted to "merchant local time" by Instore.
+
+Examples of correctly formatted dates.
+
+* 2017-05-05T15:00:00-0500
+* 2017-05-05T20:00:00Z
 
 ### orderLines
 

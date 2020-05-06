@@ -21,7 +21,24 @@ search: true
 
 # Introduction
 
-Instore partner API docs.  v1.0.4
+Instore partner API docs.  v1.0.5
+
+# API docs changelog
+
+* v1.0.0
+* v1.0.1
+    * Clairified section on currency strings.
+    * Changes for clairity and correctness for incomingOrders endpoint.
+    * Fixed formatting of JSON order examples.    
+* v1.0.2
+    * Fixed a few small errors in the curl examples.
+* v1.0.3
+    * Added incoming order status endpoint.
+* v1.0.4
+    * Removed instore id UUIDs from examples, as anyone trying to use those examples directly will get errors for not having matching menu items etc.
+    * Fixed complex order example to add up correctly to the order total.
+* v1.0.5
+    * Clairified information on the orderDate field with examples in the correct format.
 
 # A note on numbers and currency
 
