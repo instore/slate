@@ -53,6 +53,7 @@ A very basic order designed to show how simple things can be.  This is an unpaid
       "name": "%10 percent off Tuesdays"
   }],
   "orderLines": [{
+      "categoryName": "Burgers",
       "itemName": "Dollar Burger",
       "itemSizeName": "Extra Huge",
       "note": "Ketchup on the side",
