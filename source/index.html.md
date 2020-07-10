@@ -21,7 +21,7 @@ search: true
 
 # Introduction
 
-Instore partner API docs.  v1.0.5
+Instore partner API docs.  v1.0.6
 
 # API docs changelog
 
@@ -39,6 +39,9 @@ Instore partner API docs.  v1.0.5
     * Fixed complex order example to add up correctly to the order total.
 * v1.0.5
     * Clairified information on the orderDate field with examples in the correct format.
+* v1.0.6
+    * Added OrderLine.categoryName
+    * Clarified that supplied names override names that can be inferred from ids (itemId, itemSizeId, etc.)
 
 # A note on numbers and currency
 

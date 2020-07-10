@@ -188,6 +188,7 @@ Optional.  Similar to customerFacingOrderNumber, but not customer facing.  A goo
 
 ```shell
 {
+    "categoryName": STRING,
     "itemId": UUIDv4,
     "itemName": STRING,
     "itemSizeId": UUIDv4,
@@ -202,9 +203,13 @@ Optional.  Similar to customerFacingOrderNumber, but not customer facing.  A goo
 }
 ```
 
+### categoryName
+
+Optional.  Not visible except on the category sales report.  Overrides names that can be inferred from itemId.
+
 ### itemId
 
-Optional.  Identifier for an Instore menu item.  Enables more detailed reporting.
+Optional.  Identifier for an Instore menu item.  Enables more detailed reporting.  Will fill in categoryName when it is not supplied.
 
 ### itemName:
 
@@ -212,11 +217,11 @@ Required.  Prints on receipts, kitchen tickets, etc. as the primary label for th
 
 ### itemSizeId:
 
-Optional.  Identifier for an Instore menu item size.  Allows for more detailed reporting and is necessary for inventory counts to reflect this sale.
+Optional.  Identifier for an Instore menu item size.  Allows for more detailed reporting and is necessary for inventory counts to reflect this sale.  Will fill in itemSizeName when it is not supplied.
 
 ### itemSizeName
 
-Optional.  Prints on receipt next to itemName as a subtitle.  Can be used for various things e.g. "medium" or "kilograms".
+Optional.  Prints on receipt next to itemName as a subtitle.  Can be used for various things e.g. "medium" or "kilograms".  Overrides names that can be inferred from itemSizeId.
 
 ### note
 
